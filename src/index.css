@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #1E1B18;
+    background-color: #FAF8F5;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Subtle 3D and Luxury tactile styling */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Subtle architectural brass ornament animation */
+@keyframes subtleFloat3D {
+  0%, 100% {
+    transform: translateY(0px) rotateX(4deg) rotateY(-6deg) translateZ(0);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(-3deg) rotateY(6deg) translateZ(10px);
+  }
+}
+
+.animate-subtle-3d {
+  animation: subtleFloat3D 8s ease-in-out infinite;
+}
+
+/* Embossed luxury button */
+.btn-embossed {
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(114, 28, 36, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-embossed:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.16),
+    0 8px 20px rgba(114, 28, 36, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-embossed:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Card 3D hover elevation */
+.card-hover-3d {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .card-hover-3d:hover {
+    transform: translateY(-4px) rotateX(1deg);
+    box-shadow: 0 16px 32px -8px rgba(30, 27, 24, 0.08), 0 4px 12px -2px rgba(30, 27, 24, 0.04);
+  }
+}
+
+/* Amenity icon hover depth */
+.icon-depth {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .icon-depth:hover {
+    transform: translateY(-2px) rotateY(6deg) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-subtle-3d,
+  .card-hover-3d,
+  .icon-depth,
+  .btn-embossed {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Larkana Hotel Inn | Hotel & Dining in Larkana, Pakistan",
+  "description": "Larkana Hotel Inn offers comfortable accommodation, dining and hospitality in Larkana, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
